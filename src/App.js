@@ -26,8 +26,21 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  if (page === 'impressum') return <><Navbar darkMode={darkMode} toggleDark={() => setDarkMode(d => !d)} /><Impressum onBack={goHome} /></>;
-  if (page === 'datenschutz') return <><Navbar darkMode={darkMode} toggleDark={() => setDarkMode(d => !d)} /><Datenschutz onBack={goHome} /></>;
+  if (page === 'impressum') return (
+    <>
+      <Navbar darkMode={darkMode} toggleDark={() => setDarkMode(d => !d)} />
+      <Impressum onBack={goHome} />
+      <Footer onNavigate={setPage} />
+    </>
+  );
+
+  if (page === 'datenschutz') return (
+    <>
+      <Navbar darkMode={darkMode} toggleDark={() => setDarkMode(d => !d)} />
+      <Datenschutz onBack={goHome} />
+      <Footer onNavigate={setPage} />
+    </>
+  );
 
   return (
     <>

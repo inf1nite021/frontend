@@ -9,6 +9,7 @@ const links = [
 
 export default function Navbar({ darkMode, toggleDark }) {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
@@ -17,65 +18,172 @@ export default function Navbar({ darkMode, toggleDark }) {
   }, []);
 
   return (
-    <nav style={{
-      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-      background: scrolled ? 'rgba(var(--bg-rgb, 255,255,255),0.95)' : 'transparent',
+    <header style={{
+      position: 'sticky',
+      top: 0,
+      zIndex: 1000,
+      background: scrolled ? 'var(--bg)' : 'transparent',
+      borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
       backdropFilter: scrolled ? 'blur(12px)' : 'none',
-      borderBottom: scrolled ? '1px solid var(--border)' : 'none',
-      transition: 'all 0.25s ease',
-      backgroundColor: scrolled ? 'var(--bg)' : 'transparent',
+      transition: 'background 0.3s ease, border-color 0.3s ease',
     }}>
       <div style={{
-        maxWidth: 1100, margin: '0 auto',
-        padding: '0 2rem', height: 64,
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        maxWidth: 1100,
+        margin: '0 auto',
+        padding: '0 18px',
+        height: 60,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
       }}>
-        <a href="#home" style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--text)', letterSpacing: '-0.3px' }}>
+
+        {/* Logo */}
+        <a href="#" style={{ fontWeight: 800, fontSize: '1.05rem', color: 'var(--text)', textDecoration: 'none' }}>
           infinite<span style={{ color: 'var(--accent)' }}>codes</span>
         </a>
 
-        <ul style={{ display: 'flex', gap: '2rem', listStyle: 'none' }}>
+        {/* Desktop Nav */}
+        <nav style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 28,
+        }} className="navbar-desktop">
           {links.map(l => (
-            <li key={l.label}>
-              <a href={l.href} style={{
-                fontSize: '0.9rem', fontWeight: 500, color: 'var(--text-muted)',
-                transition: 'color 0.2s',
-              }}
-                onMouseEnter={e => e.target.style.color = 'var(--text)'}
-                onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}
-              >{l.label}</a>
-            </li>
+            <a
+              key={l.href}
+              href={l.href}
+              style={{ fontSize: '0.9rem', color: 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.2s' }}
+              onMouseEnter={e => e.target.style.color = 'var(--text)'}
+              onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}
+            >{l.label}</a>
           ))}
-        </ul>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           {/* Dark Mode Toggle */}
-          <button onClick={toggleDark} title="Theme wechseln" style={{
-            background: 'var(--bg-subtle2)', border: '1px solid var(--border)',
-            borderRadius: 8, width: 36, height: 36,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            cursor: 'pointer', fontSize: '1rem', transition: 'border-color 0.2s',
-          }}
+          <button
+            onClick={toggleDark}
+            style={{
+              background: 'transparent',
+              border: '1px solid var(--border)',
+              borderRadius: 8,
+              padding: '6px 10px',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              color: 'var(--text)',
+              transition: 'border-color 0.2s',
+            }}
             onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--border-hover)'}
             onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
           >
             {darkMode ? '☀️' : '🌙'}
           </button>
 
-          <a href="#contact" style={{
-            background: 'var(--accent)', color: '#fff',
-            padding: '0.5rem 1.1rem', borderRadius: 8,
-            fontSize: '0.875rem', fontWeight: 600,
-            transition: 'background 0.2s',
-            boxShadow: 'var(--shadow-sm)',
-          }}
+          <a
+            href="#contact"
+            style={{
+              background: 'var(--accent)',
+              color: '#fff',
+              padding: '8px 16px',
+              borderRadius: 8,
+              fontSize: '0.85rem',
+              fontWeight: 600,
+              textDecoration: 'none',
+              transition: 'background 0.2s',
+            }}
             onMouseEnter={e => e.currentTarget.style.background = 'var(--accent-hover)'}
             onMouseLeave={e => e.currentTarget.style.background = 'var(--accent)'}
           >
             Kontakt
           </a>
+        </nav>
+
+        {/* Mobile: Dark Toggle + Burger */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }} className="navbar-mobile">
+          <button
+            onClick={toggleDark}
+            style={{
+              background: 'transparent',
+              border: '1px solid var(--border)',
+              borderRadius: 8,
+              padding: '6px 10px',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              color: 'var(--text)',
+            }}
+          >
+            {darkMode ? '☀️' : '🌙'}
+          </button>
+
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            style={{
+              background: 'transparent',
+              border: '1px solid var(--border)',
+              borderRadius: 8,
+              padding: '6px 12px',
+              cursor: 'pointer',
+              fontSize: '1.2rem',
+              color: 'var(--text)',
+              lineHeight: 1,
+            }}
+            aria-label="Menü öffnen"
+          >
+            {menuOpen ? '✕' : '☰'}
+          </button>
         </div>
       </div>
-    </nav>
+
+      {/* Mobile Dropdown */}
+      {menuOpen && (
+        <nav style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 0,
+          background: 'var(--bg)',
+          borderTop: '1px solid var(--border)',
+          padding: '8px 0 16px',
+        }} className="navbar-mobile">
+          {links.map(l => (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setMenuOpen(false)}
+              style={{
+                padding: '12px 20px',
+                color: 'var(--text-muted)',
+                fontSize: '0.95rem',
+                textDecoration: 'none',
+                borderBottom: '1px solid var(--border)',
+              }}
+            >{l.label}</a>
+          ))}
+          <a
+            href="#contact"
+            onClick={() => setMenuOpen(false)}
+            style={{
+              margin: '12px 20px 0',
+              background: 'var(--accent)',
+              color: '#fff',
+              padding: '10px 16px',
+              borderRadius: 8,
+              fontWeight: 600,
+              textAlign: 'center',
+              textDecoration: 'none',
+            }}
+          >
+            Kontakt aufnehmen
+          </a>
+        </nav>
+      )}
+
+      {/* Responsive: Desktop vs Mobile sichtbar */}
+      <style>{`
+        .navbar-desktop { display: flex !important; }
+        .navbar-mobile { display: none !important; }
+        @media (max-width: 768px) {
+          .navbar-desktop { display: none !important; }
+          .navbar-mobile { display: flex !important; }
+        }
+      `}</style>
+    </header>
   );
 }
