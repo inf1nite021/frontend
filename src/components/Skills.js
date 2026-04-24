@@ -7,7 +7,7 @@ const t = {
     groups: [
       { label: 'E-Commerce', skills: ['Shopify App Development', 'Shopify Liquid', 'Shopify Polaris UI'] },
       { label: 'Frontend', skills: ['React', 'JavaScript (ES6+)', 'HTML / CSS', 'Responsive Design'] },
-      { label: 'Backend & Tools', skills: ['Node.js', 'REST APIs', 'RapidAPI', 'Cron Jobs', 'Git'] },
+      { label: 'Backend & Tools', skills: ['Node.js', 'REST APIs'] },
     ],
   },
   en: {
@@ -16,7 +16,7 @@ const t = {
     groups: [
       { label: 'E-Commerce', skills: ['Shopify App Development', 'Shopify Liquid', 'Shopify Polaris UI'] },
       { label: 'Frontend', skills: ['React', 'JavaScript (ES6+)', 'HTML / CSS', 'Responsive Design'] },
-      { label: 'Backend & Tools', skills: ['Node.js', 'REST APIs', 'RapidAPI', 'Cron Jobs', 'Git'] },
+      { label: 'Backend & Tools', skills: ['Node.js', 'REST APIs',] },
     ],
   },
 };

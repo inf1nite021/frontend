@@ -31,14 +31,6 @@ export default function Hero({ lang }) {
   const c = t[lang];
   return (
     <section style={{ maxWidth: 1100, margin: '0 auto', padding: '80px 24px 64px' }}>
-      <div style={{
-        display: 'inline-flex', alignItems: 'center', gap: 8,
-        border: '1px solid var(--accent)', borderRadius: 999,
-        padding: '6px 14px', marginBottom: 28, fontSize: '0.85rem', color: 'var(--accent)',
-      }}>
-        <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--accent)', display: 'inline-block' }} />
-        {c.badge}
-      </div>
       <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: 20 }}>{c.title}</h1>
       <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', maxWidth: 580, marginBottom: 36, lineHeight: 1.7 }}>{c.sub}</p>
       <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 56 }}>
