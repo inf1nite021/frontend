@@ -12,47 +12,28 @@ import Datenschutz from './components/Datenschutz';
 
 function App() {
   const [page, setPage] = useState('home');
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem('theme') !== 'light';
-  });
+  const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') !== 'light');
+  const [lang, setLang] = useState('de');
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
     localStorage.setItem('theme', darkMode ? 'dark' : 'light');
   }, [darkMode]);
 
-  const goHome = () => {
-    setPage('home');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const goHome = () => { setPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); };
 
-  if (page === 'impressum') return (
-    <>
-      <Navbar darkMode={darkMode} toggleDark={() => setDarkMode(d => !d)} />
-      <Impressum onBack={goHome} />
-      <Footer onNavigate={setPage} />
-    </>
-  );
-
-  if (page === 'datenschutz') return (
-    <>
-      <Navbar darkMode={darkMode} toggleDark={() => setDarkMode(d => !d)} />
-      <Datenschutz onBack={goHome} />
-      <Footer onNavigate={setPage} />
-    </>
-  );
+  if (page === 'impressum') return <><Navbar darkMode={darkMode} toggleDark={() => setDarkMode(d => !d)} lang={lang} setLang={setLang} /><Impressum goHome={goHome} /></>;
+  if (page === 'datenschutz') return <><Navbar darkMode={darkMode} toggleDark={() => setDarkMode(d => !d)} lang={lang} setLang={setLang} /><Datenschutz goHome={goHome} /></>;
 
   return (
     <>
-      <Navbar darkMode={darkMode} toggleDark={() => setDarkMode(d => !d)} />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
-      </main>
-      <Footer onNavigate={setPage} />
+      <Navbar darkMode={darkMode} toggleDark={() => setDarkMode(d => !d)} lang={lang} setLang={setLang} />
+      <Hero lang={lang} />
+      <About lang={lang} />
+      <Projects lang={lang} />
+      <Skills lang={lang} />
+      <Contact lang={lang} />
+      <Footer setPage={setPage} lang={lang} />
     </>
   );
 }
