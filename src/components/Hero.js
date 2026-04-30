@@ -4,25 +4,23 @@ const t = {
   de: {
     badge: 'Offen für neue Projekte',
     title: 'Shopify Developer & Web Apps',
-    sub: 'Ich entwickle Shopify-Apps, Online-Shops und Web-Applikationen — sauber, skalierbar und mit Fokus auf echten Mehrwert. Solo-Founder von infinitecodes-solutions.',
+    sub: 'Ich entwickle Shopify-Apps, Online-Shops und Web-Applikationen - sauber, skalierbar und mit Fokus auf echten Mehrwert.',
     cta1: 'Projekte ansehen',
     cta2: 'Kontakt aufnehmen',
     stats: [
-      { val: '2', label: 'Shopify-Apps entwickelt' },
-      { val: '2', label: 'Online-Shops aufgebaut' },
-      { val: '3+', label: 'Jahre Erfahrung' },
+      { val: '11', label: 'Shopify-Apps entwickelt' },
+      { val: '13', label: 'Online-Shops aufgebaut' }
     ],
   },
   en: {
     badge: 'Open for new projects',
     title: 'Shopify Developer & Web Apps',
-    sub: 'I build Shopify apps, online stores and web applications — clean, scalable and focused on real value. Solo founder of infinitecodes-solutions.',
+    sub: 'I build Shopify apps, online stores and web applications - clean, scalable and focused on real value.',
     cta1: 'View Projects',
     cta2: 'Get in touch',
     stats: [
-      { val: '2', label: 'Shopify apps built' },
-      { val: '2', label: 'Online stores launched' },
-      { val: '3+', label: 'Years of experience' },
+      { val: '11', label: 'Shopify apps built' },
+      { val: '13', label: 'Online stores launched' }
     ],
   },
 };

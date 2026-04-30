@@ -40,7 +40,7 @@ export default function Navbar({ darkMode, toggleDark, lang, setLang }) {
         height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
         <a href="#" style={{ fontWeight: 800, fontSize: '1.05rem', color: 'var(--text)', textDecoration: 'none' }}>
-          infinite<span style={{ color: 'var(--accent)' }}>codes</span>
+          infinitecodes-<span style={{ color: 'var(--accent)' }}>solutions.de</span>
         </a>
 
         {/* Desktop Nav */}

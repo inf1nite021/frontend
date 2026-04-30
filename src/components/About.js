@@ -4,15 +4,15 @@ const t = {
   de: {
     section: 'About',
     title: 'Wer steckt dahinter?',
-    body1: 'Als Junior IT-Spezialist aus **Deutschland** entwickle ich unter dem Namen **infinitecodes-solutions** individuelle Shopify-Apps und Web-Lösungen für Händler.',
-    body2: 'Mein Ansatz: sauberer Code, klares Design und Lösungen, die wirklich funktionieren — vom ersten Commit bis zum Launch.',
+    body1: 'Als IT-Spezialist aus **Deutschland** entwickle ich unter dem Namen **infinitecodes-solutions** individuelle Shopify-Apps und Web-Lösungen für Händler.',
+    body2: 'Mein Ansatz: sauberer Code, klares Design und Lösungen, die wirklich funktionieren - vom ersten Commit bis zum Launch.',
     tags: ['Shopify Apps', 'Web Apps', 'E-Commerce', 'React', 'Node.js'],
   },
   en: {
     section: 'About',
     title: 'Who is behind this?',
-    body1: 'As a junior IT specialist from **Germany**, I develop custom Shopify apps and web solutions for merchants under the name **infinitecodes-solutions**.',
-    body2: 'My approach: clean code, clear design and solutions that actually work — from the first commit to launch.',
+    body1: 'As a IT specialist from **Germany**, I develop custom Shopify apps and web solutions for merchants under the name **infinitecodes-solutions**.',
+    body2: 'My approach: clean code, clear design and solutions that actually work - from the first commit to launch.',
     tags: ['Shopify Apps', 'Web Apps', 'E-Commerce', 'React', 'Node.js'],
   },
 };

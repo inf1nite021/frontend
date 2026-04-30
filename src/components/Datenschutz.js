@@ -22,7 +22,7 @@ export default function Datenschutz({ onBack }) {
       <Section title="1. Verantwortlicher">
         <p>infinitecodes-solutions, Gianluca Iacona<br />
         Rolshover Straße 70, 51105 Köln<br />
-        E-Mail: <a href="mailto:info@infinitecodes.de" style={{ color: 'var(--accent)' }}>info@infinitecodes.de</a></p>
+        E-Mail: <a href="mailto:anfragen@infinitecodes-solutions.de" style={{ color: 'var(--accent)' }}>anfragen@infinitecodes-solutions.de</a></p>
       </Section>
 
       <Section title="2. Erhobene Daten">

@@ -28,7 +28,7 @@ export default function Impressum({ onBack }) {
       </Section>
 
       <Section title="Kontakt">
-        <p>E-Mail: <a href="mailto:info@infinitecodes.de" style={{ color: 'var(--accent)' }}>info@infinitecodes.de</a></p>
+        <p>E-Mail: <a href="mailto:anfragen@infinitecodes-solutions.de" style={{ color: 'var(--accent)' }}>anfragen@infinitecodes-solutions.de</a></p>
       </Section>
 
       <Section title="Umsatzsteuer">
@@ -72,25 +72,6 @@ export default function Impressum({ onBack }) {
           Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
         </p>
       </Section>
-      <Section title="Google Fonts">
-        <p style={{ color: 'var(--text-muted)' }}>
-            Diese Website verwendet Google Fonts, einen Dienst der Google LLC, 1600 Amphitheatre Parkway,
-            Mountain View, CA 94043, USA. Beim Laden der Seite werden Schriftarten direkt von Google-Servern
-            abgerufen, wodurch Ihre IP-Adresse an Google übertragen werden kann.
-        </p>
-        <p style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>
-            Die Nutzung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse
-            an einheitlicher Darstellung der Website). Weitere Informationen finden Sie in der{' '}
-            <a
-            href="https://policies.google.com/privacy"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: 'var(--accent)' }}
-            >
-            Datenschutzerklärung von Google
-            </a>.
-        </p>
-        </Section>
     </div>
   );
 }

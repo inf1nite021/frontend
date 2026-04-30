@@ -132,7 +132,7 @@ export default function Projects({ lang }) {
           <div style={{ fontWeight: 700, marginBottom: 4 }}>{u.title}</div>
           <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>{u.sub}</p>
         </div>
-        <a href="https://www.upwork.com" target="_blank" rel="noreferrer" style={{
+        <a href="https://www.upwork.com/freelancers/~01a1c78ea5664b8961?mp_source=share" target="_blank" rel="noreferrer" style={{
           background: 'var(--accent)', color: '#fff', padding: '10px 20px',
           borderRadius: 10, fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none', whiteSpace: 'nowrap',
         }}
